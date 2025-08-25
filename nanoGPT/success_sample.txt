@@ -1,0 +1,206 @@
+Job: JB_BIGTABLES
+Type: e
+Error: Data flow New_DataFlow7Loader Query_yevmiye_fisi_satir_bilgileri SQL submitted to ODBC data source IQ_SIM_988 resulted in error [SAP][ODBC Driver][SAP IQ]You have run out of space in IQ_SYSTEM_MAIN DBSpace. Current DBSpace size is 10240MB. -- (slib/s_blockmap.cxx 5902) . The SQL submitted is LOAD TABLE dba.yevmiye_fisi_satir_bilgileri (isyerikodu  PREFIX 2 NULL(ZEROS), yevmiyeno  ASCII(8) NULL(ZEROS), satirno  ASCII(7) NULL(ZEROS), hesapno  PREFIX 2 NULL(ZEROS), aciklama  PREFIX 2 NULL(ZEROS), borc  ASCII(19) NULL(ZEROS), alacak  ASCII(19) NULL(ZEROS), miktar  ASCII(14) NULL(ZEROS), birim  ASCII(4) NULL(ZEROS), depokodu  ASCII(9) NULL(ZEROS), hareketkodu  PREFIX 2 NULL(ZEROS), belgeno  PREFIX 2 NULL(ZEROS), yil  ASCII(6) NULL(ZEROS), borc_miktar  ASCII(15) NULL(ZEROS), alacak_miktar  ASCII(15) NULL(ZEROS), fatura_tarihi  BINARY WITH NULL BYTE, kimlik_vergino  PREFIX 2 NULL(ZEROS), uuid  PREFIX 2 NULL(ZEROS)) USING CLIENT FILE 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236_0.dat' QUOTES OFF ESCAPES OFF FORMAT BINARY STRIP OFF BYTE ORDER LOW WITH CHECKPOINT OFF MESSAGE LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.msg' ROW LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.row' LOG DELIMITED BY 'x7F'.
+Solution EN: This error indicates that the IQ_SYSTEM_MAIN DBSpace has reached its capacity. Consider extending the DBSpace by adding more files or increasing the size of existing ones. Also review space usage with sp_iqdbspace and archive or purge old data if necessary.
+Solution TR: Bu hata, IQ_SYSTEM_MAIN DBSpace alanının dolduğunu gösterir. Mevcut dosyaların boyutunu artırarak veya yeni dosyalar ekleyerek DBSpace alanını genişletmeyi düşünün. Ayrıca sp_iqdbspace ile alan kullanımını inceleyin ve gerekirse eski verileri arşivleyin veya silin.
+
+------
+
+Job: Unknown Job
+Type: e
+Error: HTTP client error:28:28:28:Timeout was reached - SAP Data Services 4.x
+Solution EN: In the DSConfig.txt file under the [AL_Engine] section, add HTTPRequestTimeout = 5000 to set the request timeout in milliseconds, and increase the value if a longer timeout is needed.
+Solution TR: DSConfig.txt dosyasında [AL_Engine] bölümünün altına HTTPRequestTimeout = 5000 satırını ekleyin; bu ayar, isteğin zaman aşımı süresini milisaniye cinsinden belirler. Daha uzun bir zaman aşımı gerekiyorsa bu değeri artırın.
+
+----
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data flow New_DataFlow7Loader Query_yevmiye_fisi_satir_bilgileri SQL submitted to ODBC data source IQ_SIM_988 resulted in error [SAP][ODBC Driver][SAP IQ]You have run out of space in IQ_SYSTEM_MAIN DBSpace. Current DBSpace size is 10240MB. -- (slib/s_blockmap.cxx 5902) . The SQL submitted is LOAD TABLE dba.yevmiye_fisi_satir_bilgileri (isyerikodu  PREFIX 2 NULL(ZEROS), yevmiyeno  ASCII(8) NULL(ZEROS), satirno  ASCII(7) NULL(ZEROS), hesapno  PREFIX 2 NULL(ZEROS), aciklama  PREFIX 2 NULL(ZEROS), borc  ASCII(19) NULL(ZEROS), alacak  ASCII(19) NULL(ZEROS), miktar  ASCII(14) NULL(ZEROS), birim  ASCII(4) NULL(ZEROS), depokodu  ASCII(9) NULL(ZEROS), hareketkodu  PREFIX 2 NULL(ZEROS), belgeno  PREFIX 2 NULL(ZEROS), yil  ASCII(6) NULL(ZEROS), borc_miktar  ASCII(15) NULL(ZEROS), alacak_miktar  ASCII(15) NULL(ZEROS), fatura_tarihi  BINARY WITH NULL BYTE, kimlik_vergino  PREFIX 2 NULL(ZEROS), uuid  PREFIX 2 NULL(ZEROS)) USING CLIENT FILE 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236_0.dat' QUOTES OFF ESCAPES OFF FORMAT BINARY STRIP OFF BYTE ORDER LOW WITH CHECKPOINT OFF MESSAGE LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.msg' ROW LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.row' LOG DELIMITED BY 'x7F'.
+Solution EN: This error indicates that the IQ_SYSTEM_MAIN DBSpace has reached its capacity. Consider extending the DBSpace by adding more files or increasing the size of existing ones. Also review space usage with sp_iqdbspace and archive or purge old data if necessary.
+Solution TR: Bu hata, IQ_SYSTEM_MAIN DBSpace alanının dolduğunu gösterir. Mevcut dosyaların boyutunu artırarak veya yeni dosyalar ekleyerek DBSpace alanını genişletmeyi düşünün. Ayrıca sp_iqdbspace ile alan kullanımını inceleyin ve gerekirse eski verileri arşivleyin veya silin.
+
+-----
+
+Job: Unknown Job
+Type: e
+Error: HTTP client error:28:28:28:Timeout was reached - SAP Data Services 4.x
+Solution EN: In the DSConfig.txt file under the [AL_Engine] section, add HTTPRequestTimeout = 5000 to set the request timeout in milliseconds, and increase the value if a longer timeout is needed.
+Solution TR: DSConfig.txt dosyasında [AL_Engine] bölümünün altına HTTPRequestTimeout = 5000 satırını ekleyin; bu ayar, isteğin zaman aşımı süresini milisaniye cinsinden belirler. Daha uzun bir zaman aşımı gerekiyorsa bu değeri artırın.
+
+
+-------
+
+
+Job: JB_DIRECTORIES
+Type: e
+Error: Cannot find NT Oracle Server dll OCI.DLL. Please make sure that Oracle has been installed and the PATH variable points to the correct lib directories (BODI-1112172)
+Solution EN: Add the directory containing OCI.DLL to the PATH environment variable and verify the Designer Client Tool bit version by checking if AL_Designer.exe in Task Manager has *32 (32-bit) or not (64-bit).
+Solution TR: **OCI.DLL dosyasını içeren klasörü PATH ortam değişkenine ekleyin ve Görev Yöneticisi��nde AL_Designer.exe işleminin yanında 32 ibaresi olup olmadığınnı kontrol ederek Designer Client Tool��un bit sürümünü doğrulayın (32 varsa 32-bit, yoksa 64-bit��tir).
+
+-----
+
+
+Job: JB_BIGTABLES
+Type: e
+Error: Parser detected an unknown data type error on table with DF34_RAW (DF34R) or DF34_DEC data type
+Solution EN: Data Services cannot import tables with DF34_RAW (DF34R) and DF34_DEC datatypes from SAP Application Datastores, so either change the datatype or create and use a view without these datatypes as a workaround.
+Solution TR: Data Services, SAP Application Datastore��larından DF34_RAW (DF34R) ve DF34_DEC veri tipine sahip tabloları içe aktaramaz; bu nedenle, ya veri tipini değiştirin ya da bu veri tiplerini içermeyen bir görünüm oluşturup kullanarak sorunu geçici olarak ��özün.
+
+
+----
+
+
+Job: JB_BIGTABLES
+Type: e
+Error: Error: Access denied: failed to verify repository identification. Contact your repository administrator or try another repository.
+Solution EN: Log into Central Management Console, navigate to Data Services > RepoName, right-click RepoName, click Properties, enter the password if using DS 14.2.3, and click Save to update the connection information.
+Solution TR: Central Management Console��a giriş yapın, Data Services > RepoName yolunu izleyin, RepoName ��zerine sağ tıklayın, Özellikler��e (Properties) tıklayın, eğer DS 14.2.3 kullanıyorsanız parolayı girin ve bağlantı bilgilerini güncellemek için Kaydet��e (Save) tıklayın.
+
+
+----
+
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Error calling RFC function to get table data: RFC_ABAP_RUNTIME_FAILURE-(Exception_Key: SAPSQL_ERROR)- An error has occurred while parsing a dynamic entry.
+Solution EN: Declare global variables with Date/Datetime/Decimal(x,x) datatype based on SAP system, and use Cast or to_date() function to convert to Date/Datetime/Decimal(x).
+Solution TR: SAP sistemine göre Date/Datetime/Decimal(x,x) veri tipinde global değiştirin ya da bu veri tiplerindeki belirtilen bir gerekli olanının veya etkinleştirilmesinden kaynaklanır; ��özüm için sp_iqdbspace ile alan durumunu kontrol edip gerekirse DBSPACE alanını genişletin ve kullanıcıya LOAD yetkisi verin.
+
+
+------
+
+
+Job: JB_BIGTABLES\nType: e\nError: HKEY_16 için  PREFIX 2 NULL(ZEROS), yevmiyeno  ASCII(8) NULL(ZEROS), satirno  ASCII(7) NULL(ZEROS), hesapno  PREFIX 2 NULL(ZEROS), aciklama  PREFIX 2 NULL(ZEROS), borc  ASCII(19) NULL(ZEROS), alacak  ASCII(19) NULL(ZEROS), miktar  ASCII(14) NULL(ZEROS), birim  ASCII(4) NULL(ZEROS), depokodu  ASCII(9) NULL(ZEROS), hareketkodu  PREFIX 2 NULL(ZEROS), belgeno  PREFIX 2 NULL(ZEROS), yil  ASCII(6) NULL(ZEROS), borc_miktar  ASCII(15) NULL(ZEROS), alacak_miktar  ASCII(15) NULL(ZEROS), fatura_tarihi  BINARY WITH NULL BYTE, kimlik_vergino  PREFIX 2 NULL(ZEROS), uuid  PREFIX 2 NULL(ZEROS)) USING CLIENT FILE 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236_0.dat' QUOTES OFF ESCAPES OFF FORMAT BINARY STRIP OFF BYTE ORDER LOW WITH CHECKPOINT OFF MESSAGE LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.msg' ROW LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.row' LOG DELIMITED BY 'x7F' failed.
+Solution EN: This error indicates that the IQ_SYSTEM_MAIN DBSpace has reached its capacity. Consider extending the DBSpace by adding more files or increasing the size of existing ones. Also review space usage with sp_iqdbspace and archive or purge old data if necessary.
+Solution TR: Bu hata, IQ_SYSTEM_MAIN DBSpace alanının dolduğunu gösterir. Mevcut dosyaların boyutunu artırarak veya yeni dosyalar ekleyerek DBSpace alanını genişletmeyi düşünün. Ayrıca sp_iqdbspace ile alan kullanımını inceleyin ve gerekirse eski verileri arşivleyin veya silin.
+
+
+------
+
+
+Job: JB_SMALLTABLES_8130
+Type: e
+Error: Data flow df_1SQL submitted to ODBC data source IQ_SIM_465 resulted in error [SAP][ODBC Driver][SAP IQ]Table 'frsArazi_20180510' notfound. The SQL submitted is TRUNCATE TABLE dba.frsArazi_20180510.
+Solution EN: The error indicates the referenced table does not exist in the target database. Ensure the table has been created and the schema is correct. You may need to review the database objects or execute the CREATE TABLE script before running the data flow.
+Solution TR: Bu hata, belirtilen tablonun hedef veritabanında bulunmadığını gösterir. Tablonun oluşturulmuş olduğundan ve ��emanın doğru tanımlandığından emin olun. Veri akışını ��alıştırmadan ��nce CREATE TABLE komutunu yürütmeniz gerekebilir.
+
+
+----
+
+
+Job: JB_SMALLTABLES_5182
+Type: e
+Error: Data flow df_8ODBC call SQLDriverConnect for data source IQ_SIM_452 failed: [SAP][ODBC Driver][SAP IQ]Database server connection limitexceeded. Notify Customer Support.
+Solution EN: The error suggests that the number of concurrent connections to the SAP IQ database has exceeded the configured limit. Review the max_connections configuration on the database server and consider increasing the limit or optimizing existing connections. You may also need to terminate idle or unused sessions.
+Solution TR: Bu hata, SAP IQ veritabanına olan eşzamanlı bağlantı sayısının yapılandırılmış sınırı aştığını gösterir. Veritabanı sunucusundaki max_connections ayarını gözden geçirin ve sınırı artırmayı veya mevcut bağlantıları optimize etmeyi değerlendirin. Kullanılmayan veya boşta kalan oturumları sonlandırmanız gerekebilir.
+
+
+----
+
+Job: JB_BIGTABLES\nType: e\nError:0000000080BODI-INFault address 0 (1AEE1C:Program FilesSnowflake ODBC DriverBinSnowflakeDSII.dll
+Solution EN: Check DS online PAM using the keyword 'Snowflake'  and install the compatible Snowflake'  and 4.2 Sp14 and 4.3.
+Solution TR: DS ��evrimiçi PAM��i 'Snowflake' anahtar kelimesiyle kontrol edin ve 4.2 SP14 ile 4.3 sürümleri için uyumlu Snowflake ODBC Driver sürümünü hem DS sunucuya hem de istemci makinelerine yükleyin.
+
+
+-----
+
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Specified value for Extractor date-time in invalid.(BODI-1116176)
+Solution EN: Only a global datetime variable can be used as a parameter in ODP source extraction; create one with the desired datetime value, select it in the ODP settings, then save and validate without errors.
+Solution TR: ODP kaynak ekstraksiyonunda yalnızca global bir datetime değişkeni parametre olarak kullanılabilir; istenilen datetime değeriyle bir tane oluşturun, ODP ayarlarında bu değişkenişkeni seçin, ardından hatasız şekilde kaydedip doğrulayın.
+
+-----
+
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data Services is unable to generate the schema information from the following SQL: 'SELECT * FROM xxx' Error details: Error details: Error reading BigQuery table data from Google API Serverxxx; HTTP Error string:Invalid table name...(BODI-1130199)
+Solution EN: Create Google BigQuery ODBC datastore instead of the Google BigQuery datastore.
+Solution TR: Google BigQuery datastore yerine Google BigQuery ODBC datastore oluşturun.
+
+------
+
+Job: JB_BIGTABLES
+Type: e
+Error: Cannot write pipe, due to error In write : write failed : 32 - Broken pipe; m_writeHandle = 18; m_processHandle = 0.
+Solution EN: Try increasing the number of open files by setting the limit to a higher value, for example by running ulimit minus n 819200 as the SAP Data Services user
+Solution TR: Açık dosya sayısını artırmayı deneyin; Örneğin, SAP Data Services kullanıcısı olarak ulimit -n 819200 komutunu çalıştırarak limiti daha yüksek bir değere ayarlayın.
+
+
+-----
+
+
+Job: Unknown Job
+Type: e
+Error: Session job_name ODBC call SQLDriverConnect to connect database database database database database_name failed with error: ODBC call SQLDriverConnect to connect database_name failed with error: ODBC call SQLDriverConnect for data source database_name failed: [SAP AG][LIBODBCHDB SO][HDBODBC] Communication link failure;-10709 Connection failed (RTE:[300010] Cannot create SSL context: 151441516, file:pem_lib.c, line:707 - Expecting: CERTIFICATE (hana_server_name:port)). Notify Customer Support.. Use the ODBCDriverSelector (Windows) or DSConnectionManager.sh
+Solution EN: Set the ODBC DSN to use SAPCRYPTOLIB certificates, install SAPCRYPTOLIB on the job server, set the SECUDIR environment variable, and restart the job server.
+Solution TR: ODBC DSN��yi SAPCRYPTOLIB sertifikalmadığını kullanarak bir is not null ,engine command replace the server. Özunu kullanarak bir ��özüm için sp_configure komutuyla number of user connections değerini artırın.
+
+
+----
+
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Cannot import the metadata table name=XXX. Table XXX cannot be imported for datastore XXX.Possible causes:(1) Table does not exist in the database; (2) Information for import was specified incorrectly. Check the import information and try again. If the name is case-sensitive in the database(and not all uppercase), enter the name as it appears in the database and use double-quotation marks around the name to preserve the case.(BODI-1112339)
+Solution EN: Install PostgreSQL client13 on Redhat EL8.1
+Solution TR: Redhat EL8.1 üzerine PostgreSQL client 1300ü yükleyin.
+------
+
+Job: JB_BIGTABLES\nType: e\nError:0000000080B1CMSGTY:Program Files Snowflake ODBC DriverBinSnowflakeDSII.dll
+Solution EN: Check DS online PAM using the keyword 'Snowflake'  and install the compatible Snowflake ODBC Driver version on both DS Server and Client machines for versions 4.2 Sp14 and 4.3.
+Solution TR: DS ��evrimiçi PAM��i 'Snowflake' anahtar kelimesiyle kontrol edin ve 4.2 SP14 ile 4.3 sürümleri için uyumlu Snowflake ODBC Driver sürümünü hem DS sunucuya hem de istemci makinelerine yükleyin.
+
+
+----
+
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Specified value for Extractor date-time in invalid.(BODI-1116176)
+Solution EN: Only a global datetime variable can be used as a parameter in ODP source extraction; create one with the desired datetime value, select it in the ODP settings, then save and validate without errors.
+Solution TR: ODP kaynak ekstraksiyonunda yalnızca global bir datetime değişkeni parametre olarak kullanılabilir; istenilen datetime değeriyle bir tane oluşturun, ODP ayarlarında bu değişkeni seçin, ardından hatasız şekilde kaydedip doğrulayın.
+
+
+----
+
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data Services is unable to generate the schema information from the following SQL: 'SELECT * FROM xxx' Error reading BigQuery table data from Google API Serverxxx; HTTP Error string:Invalid table name...(BODI-1112172)
+Solution EN: Create Google BigQuery ODBC datastore instead of the Google BigQuery datastore.
+Solution TR: Google BigQuery datastore yerine Google BigQuery ODBC datastore oluşturun.
+
+------
+
+
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Cannot write pipe, due to error In write : write failed : 32 - Broken pipe; m_writeHandle = 18; m_processHandle = 0.
+Solution EN: Try increasing the number of open files by setting the limit to a higher value, for example by running ulimit minus n 819200 as the SAP Data Services user
+Solution TR: Açık dosya sayısını artırmayı deneyin; Örneğin, SAP Data Services kullanıcısı olarak ulimit -n 819200 komutunu çalıştırarak limiti daha yüksek bir değere ayarlayın.
+
+
+------
+
+Job: Unknown Job
+Type: e
+Error: Session job_name ODBC call SQLDriverConnect to connect database_name failed with error: ODBC call SQLDriverConnect to connect database database database database_name failed with error: ODBC call SQLDriverConnect for data source database_name failed: [SAP AG][LIBODBCHDB SO][HDBODBC] Communication link failure;-10709 Connection failed (RTE:[300010] Cannot create SSL context: 151441516, file:pem_lib.c, line:707 - Expecting: CERTIFICATE (hana_server_name:port)). Notify Customer Support.. Use the ODBCDriverSelector (Windows) or DSConnectionManager.sh
+Solution EN: Set the ODBC DSN to use SAPCRYPTOLIB certificates, install SAPCRYPTOLIB on the job server, set the SECUDIR environment variable, and restart the job server.
+Solution TR: ODBC DSN��yi SAPCRYPTOLIB sertifikalarını kullanacak ��ekilde ayarlayın, job server ��zerine SAPCRYPTOLIB��i kurun, SECUDIR ortam değişkenini ayarlayın ve job server��ı yeniden başlatın.
+---------------
+
+
+Job: JB_DIRECTORIES
+Type: e
+Error: Unable to find servers in CMS_host: port and cluster @CMS_host:port with kind pjs and service DS.AdminService. All such servers could be down or disabled by the administrator. (FWM 01014).
+Solution EN: If an EIM Adaptive Processing Server becomes corrupted or unresponsive, try creating a new test server by stopping, disabling, and then selecting services for a new EIMAdaptiveProcessingServer in the Central Management Console
+Solution TR: Bir EIM Adaptive Processing Server bozulur ya da yanıt vermez hale gelirse, Central Management Console üzerinden yeni bir test sunucusu oluşturmayı deneyin; bunun için mevcut sunucuyu durdurun, devre dışı bırakın ve ardından yeni bir EIMAdaptiveProcessingServer için servisleri seçin.
+
+---------
+
+

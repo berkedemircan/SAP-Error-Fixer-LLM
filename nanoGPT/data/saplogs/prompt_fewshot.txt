@@ -1,0 +1,197 @@
+
+You are a specialized technical assistant trained to understand and resolve SAP Data Services log errors. For each given log entry, return a unique and technically detailed resolution in English (`solution_en`) and Turkish (`solution_tr`). Avoid generic answers; focus on precise diagnostics and SAP-specific context.
+
+###
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data flow New_DataFlow7Loader Query_yevmiye_fisi_satir_bilgileri SQL submitted to ODBC data source IQ_PROD_NEW resulted in error [SAP][ODBC Driver][SAP IQ]You have run out of space in IQ_SYSTEM_MAIN DBSpace. Current DBSpace size is 10240MB. -- (slib/s_blockmap.cxx 5902) . The SQL submitted is LOAD TABLE dba.yevmiye_fisi_satir_bilgileri (isyerikodu  PREFIX 2 NULL(ZEROS), yevmiyeno  ASCII(8) NULL(ZEROS), satirno  ASCII(7) NULL(ZEROS), hesapno  PREFIX 2 NULL(ZEROS), aciklama  PREFIX 2 NULL(ZEROS), borc  ASCII(19) NULL(ZEROS), alacak  ASCII(19) NULL(ZEROS), miktar  ASCII(14) NULL(ZEROS), birim  ASCII(4) NULL(ZEROS), depokodu  ASCII(9) NULL(ZEROS), hareketkodu  PREFIX 2 NULL(ZEROS), belgeno  PREFIX 2 NULL(ZEROS), yil  ASCII(6) NULL(ZEROS), borc_miktar  ASCII(15) NULL(ZEROS), alacak_miktar  ASCII(15) NULL(ZEROS), fatura_tarihi  BINARY WITH NULL BYTE, kimlik_vergino  PREFIX 2 NULL(ZEROS), uuid  PREFIX 2 NULL(ZEROS)) USING CLIENT FILE 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236_0.dat' QUOTES OFF ESCAPES OFF FORMAT BINARY STRIP OFF BYTE ORDER LOW WITH CHECKPOINT OFF MESSAGE LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.msg' ROW LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.row' LOG DELIMITED BY 'x7F'.
+Solution EN: The error occurred because there is no space left in the IQ_SYSTEM_MAIN dbspace; as a solution, you should increase the space by adding a new file to this dbspace using the ALTER DBSPACE command.
+Solution TR: Hata, IQ_SYSTEM_MAIN alanında yer kalmadığı için oluşmuştur; çözüm olarak ALTER DBSPACE komutuyla bu DBSpace’e yeni bir dosya ekleyerek alanı artırmalısınız.
+
+###
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data flow New_DataFlow7Loader Query_yevmiye_fisi_satir_bilgileri Execution of Bulk Load for target LOAD TABLE dba.yevmiye_fisi_satir_bilgileri (isyerikodu  PREFIX 2 NULL(ZEROS), yevmiyeno  ASCII(8) NULL(ZEROS), satirno  ASCII(7) NULL(ZEROS), hesapno  PREFIX 2 NULL(ZEROS), aciklama  PREFIX 2 NULL(ZEROS), borc  ASCII(19) NULL(ZEROS), alacak  ASCII(19) NULL(ZEROS), miktar  ASCII(14) NULL(ZEROS), birim  ASCII(4) NULL(ZEROS), depokodu  ASCII(9) NULL(ZEROS), hareketkodu  PREFIX 2 NULL(ZEROS), belgeno  PREFIX 2 NULL(ZEROS), yil  ASCII(6) NULL(ZEROS), borc_miktar  ASCII(15) NULL(ZEROS), alacak_miktar  ASCII(15) NULL(ZEROS), fatura_tarihi  BINARY WITH NULL BYTE, kimlik_vergino  PREFIX 2 NULL(ZEROS), uuid  PREFIX 2 NULL(ZEROS)) USING CLIENT FILE 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236_0.dat' QUOTES OFF ESCAPES OFF FORMAT BINARY STRIP OFF BYTE ORDER LOW WITH CHECKPOINT OFF MESSAGE LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.msg' ROW LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.row' LOG DELIMITED BY 'x7F' failed.
+Solution EN: The error is typically caused by insufficient space in the IQ database or lack of user privileges; to resolve it, check space usage with sp_iqdbspace, expand the DBSPACE if needed, and grant the user LOAD privileges.
+Solution TR: Hata, genellikle IQ veritabanında alan yetersizliği veya kullanıcı yetkisizliğinden kaynaklanır; çözüm için sp_iqdbspace ile alan durumunu kontrol edip gerekirse DBSPACE alanını genişletin ve kullanıcıya LOAD yetkisi verin.
+
+
+###
+
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data flow New_DataFlow52Loader Query_emtia_cikis_fisi_eskiSQL submitted to ODBC data source IQ_PROD_NEW resulted in error [SAP][ODBC Driver][SAP IQ]Column 'isyeri_kodu' in table'emtia_cikis_fisi_eski' cannot be NULL. The SQL submitted is LOAD TABLE dba.emtia_cikis_fisi_eski (isyeri_kodu  PREFIX2 NULL(ZEROS) , depo_kodu  ASCII(9) NULL(ZEROS) , depo_ac_tarih  BINARY WITH NULL BYTE , emtia_kodu  PREFIX 2 NULL(ZEROS), musteri_no  PREFIX 2 NULL(ZEROS) , tarih  BINARY WITH NULL BYTE , miktar  ASCII(17) NULL(ZEROS) , satis_fiyati ASCII(19) NULL(ZEROS) , teslimat  ASCII(17) NULL(ZEROS) , fatura_seri  PREFIX 2 NULL(ZEROS) , fatura_no  PREFIX 2NULL(ZEROS) , satis_turu  ASCII(6) NULL(ZEROS) , olcek  PREFIX 2 NULL(ZEROS) , maliyet_fiyati  ASCII(19) NULL(ZEROS) ,belge_no  PREFIX 2 NULL(ZEROS) , sira_no  ASCII(8) NULL(ZEROS) , toplam_fiyat  ASCII(19) NULL(ZEROS) , belge_sira ASCII(5) NULL(ZEROS) , kdv_orani  ASCII(6) NULL(ZEROS) , satis_tutari  ASCII(19) NULL(ZEROS) , kdv_tutari  ASCII(19)NULL(ZEROS) , kartelano  ASCII(8) NULL(ZEROS) , tahmil_tarih  BINARY WITH NULL BYTE , tahmil_sira_no  ASCII(8)NULL(ZEROS) , fatura_tarihi  BINARY WITH NULL BYTE , iptal_iade  ASCII(3) NULL(ZEROS) , yevno  ASCII(8) NULL(ZEROS) ,imiktar  ASCII(17) NULL(ZEROS) , itutar  ASCII(19) NULL(ZEROS) , kartelaid  ASCII(17) NULL(ZEROS) , belge_tarihi BINARY WITH NULL BYTE ) USING CLIENT FILE 'C:/ProgramData/SAP BusinessObjects/DataServices/log/bulkloader/30d3179951e1cb60238e317d606dd39f_0.dat' QUOTES OFF ESCAPES OFF FORMAT BINARY STRIP OFF  BYTE ORDER LOWWITH CHECKPOINT OFF  MESSAGE LOG 'C:/ProgramData/SAP BusinessObjects/DataServices/log/bulkloader/30d3179951e1cb60238e317d606dd39f.msg' ROW LOG 'C:/ProgramData/SAP BusinessObjects/DataServices/log/bulkloader/30d3179951e1cb60238e317d606dd39f.row' LOG DELIMITED BY 'x7F'.
+Solution EN: Ensure that the isyeri_kodu column in the source data file contains no NULL values, as the target column in the emtia_cikis_fisi_eski table is defined as NOT NULL.
+Solution TR: Kaynak veri dosyasında isyeri_kodu kolonunun NULL değer içermediğinden emin olun, çünkü hedef tablo olan emtia_cikis_fisi_eski tablosundaki bu kolon NOT NULL olarak tanımlanmıştır.
+
+###
+
+
+Job: JB_SMALLTABLES
+Type: w
+Error: Dataflow df_29 Warning: Rows per commit for table loader has been reset to 1 because table sysiqvindex contains a LONG or BLOB column.
+Solution EN: This warning indicates that rows per commit has been automatically reset to 1 because the target table contains a BLOB or LONG column; this is by design in SAP IQ, and for better performance, consider alternative loading strategies.
+Solution TR: Bu uyarı, hedef tabloda BLOB veya LONG veri türü bulunduğu için rows per commit değerinin otomatik olarak 1'e düşürüldüğünü belirtir; bu IQ sisteminin tasarım gereğidir ve performans için alternatif yükleme stratejileri düşünülmelidir.
+
+
+###
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Data flow df_8ODBC call SQLDriverConnect for data source IQ_PROD_NEW failed: [SAP][ODBC Driver][SAP IQ]Database server connection limitexceeded. Notify Customer Support.
+Solution EN: This error indicates that the SAP IQ database has reached its maximum number of connections; terminate idle sessions and increase the number of user connections setting via sp_configure for a permanent fix.
+Solution TR: Bu hata, SAP IQ veritabanının maksimum bağlantı sınırına ulaştığını gösterir; gereksiz oturumları sonlandırın ve kalıcı çözüm için sp_configure komutuyla number of user connections değerini artırın.
+
+###
+
+
+Job: JB_DIRECTORIES
+Type: e
+Error: Cannot find NT Oracle Server dll OCI.DLL. Please make sure that Oracle has been installed and the PATH variable points to the correct lib directories (BODI-1112172)
+Solution EN: Add the directory containing OCI.DLL to the PATH environment variable and verify the Designer Client Tool bit version by checking if AL_Designer.exe in Task Manager has *32 (32-bit) or not (64-bit).
+Solution TR: **OCI.DLL dosyasını içeren klasörü PATH ortam değişkenine ekleyin ve Görev Yöneticisi’nde AL_Designer.exe işleminin yanında 32 ibaresi olup olmadığını kontrol ederek Designer Client Tool’un bit sürümünü doğrulayın (32 varsa 32-bit, yoksa 64-bit’tir).
+
+
+###
+
+
+Job: JB_SMALLTABLES
+Type: e
+Error: ODBC data source DSN name warning message for operation SQLFetchScroll(rowStsArray[]): , SQLState
+Solution EN: Re-import the table into the datastore, go to the dataflow where it’s used, delete the table from the canvas, then add it back.
+Solution TR: Tabloyu datastore’a yeniden içe aktarın, kullanıldığı dataflow’a gidin, tabloyu canvas’tan silin ve ardından tekrar ekleyin.
+
+
+###
+
+Job: JB_BIGTABLES
+Type: e
+Error: R3C-150413: Data flow df_name RFC CallReceive exception RFC_ABAP_RUNTIME_FAILURE-(Exception_Key: UNCAUGHT_EXCEPTION)- An exception has occurred that was not caught..
+Solution EN: Set the extractor configuration to ODQ, check in extractor Properties -> Attributes under the Data Services datastore if 'Enable Delta' is 'yes' meaning it’s CDC, and if so, re-import the table into the datastore, go to the dataflow where the table is used, delete it from the canvas, then add it back.
+Solution TR: Extractor konfigürasyonunu ODQ olarak ayarlayın, Data Services datastore’undaki extractor Özellikleri -> Özellikler (Attributes) bölümünde 'Enable Delta' seçeneğinin 'yes' olup olmadığını kontrol edin (bu durumda CDC anlamına gelir); eğer öyleyse, tabloyu datastore’a yeniden içe aktarın, tablonun kullanıldığı dataflow’a gidin, tabloyu canvas’tan silin ve ardından tekrar ekleyin.
+
+
+###
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Sub data flow subdataflownameLoader loadernameOracle (DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = hostname)(PORT =port)))(CONNECT_DATA =(SID=sid))) error message for operation create table: ORA-20002: ORA-01741: illegal zero-length identifier ORA-06512: at line 56.
+Solution EN: Specify a table owner so that the table create statement doesn't have an empty string () when it adds comments to the columns from the description information in the columns.
+Solution TR: Sütunlardaki açıklama bilgilerinden yorum eklerken CREATE TABLE ifadesinde boş bir string () oluşmaması için bir tablo sahibi (table owner) belirtin.
+
+###
+
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data Services is unable to generate the schema information from the following SQL: 'SELECT * FROM xxx' Error details: Error reading BigQuery table data from Google API Serverxxx; HTTP Error code:400, HTTP Error string:Bad Request, Application error:Invalid table name...(BODI-1130199)
+Solution EN: Create Google BigQuery ODBC datastore instead of the Google BigQuery datastore.
+Solution TR: Google BigQuery datastore yerine Google BigQuery ODBC datastore oluşturun.
+
+###
+
+
+Job: Unknown Job
+Type: e
+Error: Authentication plugin 'caching_sha2_password' reported error: Authentication requires secure connection
+Solution EN: SAP Data Services supports MySQL plugins like caching_sha2_password; ensure SSL is enabled, avoid using the deprecated mysql_native_password, and refer to MySQL documentation for proper SSL certificate setup, especially for repository connections.
+Solution TR: SAP Data Services, caching_sha2_password gibi MySQL eklentilerini destekler; SSL’in etkinleştirildiğinden emin olun, kullanım dışı olan mysql_native_password eklentisinden kaçının ve özellikle repository bağlantıları için doğru SSL sertifika kurulumu konusunda MySQL dokümantasyonuna başvurun.
+
+
+###
+
+Job: JB_SMALLTABLES_2410
+Type: e
+Error: Data flow df_14Loader Query_zirai_durum_cetveliSQL submitted to ODBC data source IQ_SIM_150 resulted in error [SAP][ODBC Driver][SAP IQ]Authorization required to attemptcheckout IQ_LOB license. The SQL submitted is CREATE  TABLE dba.zirai_durum_cetveli ( id DECIMAL(9, 0)  not null , isyerikodu VARCHAR (8)  not null ,  donem VARCHAR (10) ,  guncelleme_tarihi TIMESTAMP ,  kayit_onay_sef VARCHAR (5) , kayit_onay_mdr_yrd VARCHAR (5) ,  kayit_onay_mudur VARCHAR (5) ,  yagis_kar_kal DECIMAL(4, 1) ,  yagis_karla_ortulu_gunINTEGER ,  yagis_miktari_mm DECIMAL(6, 1) ,  yagis_aylik_yagis_normali_mm DECIMAL(6, 1) ,  yagis_yorum VARCHAR (15) , yagis_topraga_nufusu_cm INTEGER ,  aylik_sicaklik_en_yuksek_sic_ort INTEGER ,  aylik_sicaklik_en_dusuk_sic_ort INTEGER , aylik_sicaklik_aylik_sic_ort INTEGER ,  don_vaziyeti_yorum VARCHAR (15) ,  don_vaziyeti_gun_adedi INTEGER , don_vaziyeti_en_dusuk_sic INTEGER ,  ekilis_kislik_yorum VARCHAR (15) ,  ekilis_yazlik_yorum VARCHAR (15) , cimlenme_cikis_kislik_yorum VARCHAR (15) ,  cimlenme_cikis_yazlik_yorum VARCHAR (15) ,  kardeslenme_kislik_yorum VARCHAR(25) ,  kardeslenme_yazlik_yorum VARCHAR (25) ,  sapakalkma_kislik_yorum VARCHAR (1) ,  sapakalkma_kislik_bitki_boyuDECIMAL(5, 0) ,  sapakalkma_yazlik_yorum VARCHAR (1) ,  sapakalkma_yazlik_bitki_boyu DECIMAL(5, 0) , basaklanma_kislik_yorum VARCHAR (1) ,  basaklanma_kislik_bitki_boyu DECIMAL(5, 0) ,  basaklanma_yazlik_yorum VARCHAR (1),  basaklanma_yazlik_bitki_boyu DECIMAL(5, 0) ,  dollenme_kislik_yorum VARCHAR (1) ,  dollenme_kislik_bitki_boyuDECIMAL(5, 0) ,  dollenme_yazlik_yorum VARCHAR (1) ,  dollenme_yazlik_bitki_boyu DECIMAL(5, 0) ,  erme_kislik_yorumVARCHAR (1) ,  erme_kislik_bitki_boyu DECIMAL(5, 0) ,  erme_yazlik_yorum VARCHAR (1) ,  erme_yazlik_bitki_boyu DECIMAL(5,0) ,  verim_kislik_yorum VARCHAR (1) ,  verim_yazlik_yorum VARCHAR (1) ,  ekilis_alani_kislik_kirac DECIMAL(8, 2) , ekilis_alani_kislik_sulu DECIMAL(8, 2) ,  ekilis_alani_yazlik_kirac DECIMAL(8, 2) ,  ekilis_alani_yazlik_sulu DECIMAL(8,2) ,  ekilis_alani_kislik_gubreli DECIMAL(8, 2) ,  ekilis_alani_yazlik_gubreli DECIMAL(8, 2) , ekilis_alani_kislik_gubresiz DECIMAL(8, 2) ,  ekilis_alani_yazlik_gubresiz DECIMAL(8, 2) ,  toplam_ek_al_kis_makDECIMAL(8, 2) ,  toplam_ek_al_yaz_mak DECIMAL(8, 2) ,  toplam_ek_al_kis_ekmek DECIMAL(8, 2) ,  toplam_ek_al_yaz_ekmekDECIMAL(8, 2) ,  toplam_ek_al_kis_arpa DECIMAL(8, 2) ,  toplam_ek_al_yaz_arpa DECIMAL(8, 2) ,  toplam_ek_al_kis_cavdarDECIMAL(8, 2) ,  toplam_ek_al_yaz_cavdar DECIMAL(8, 2) ,  toplam_ek_al_kis_tritikale DECIMAL(8, 2) , toplam_ek_al_yaz_tritikale DECIMAL(8, 2) ,  iklim_durumu LONG VARCHAR ,  ekilis_durumu LONG VARCHAR , bitki_gelisim_durumu LONG VARCHAR ,  hastalik_mucadele LONG VARCHAR ,  diger_urunlere_kayis LONG VARCHAR , uretim_verim_durumu LONG VARCHAR ,  diger_degerlendirme LONG VARCHAR ,  toplam_ek_al_kis_yulaf DECIMAL(8, 2) , toplam_ek_al_yaz_yulaf DECIMAL(8, 2) ,   primary key ( id, isyerikodu) ) .
+Solution EN: The error means your SAP IQ server lacks the required IQ_LOB license to create a table with LONG VARCHAR columns. Contact your system admin to install or activate the needed license.
+Solution TR: Hata, LONG VARCHAR alanlarını içeren tabloyu oluşturmak için gerekli olan IQ_LOB lisansının sistemde olmadığını belirtir. Sistem yöneticinizle iletişime geçip gerekli lisansı yükletin veya etkinleştirin.
+
+
+###
+
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data flow New_DataFlow7Loader Query_yevmiye_fisi_satir_bilgileri SQL submitted to ODBC data source IQ_SIM_988 resulted in error [SAP][ODBC Driver][SAP IQ]You have run out of space in IQ_SYSTEM_MAIN DBSpace. Current DBSpace size is 10240MB. -- (slib/s_blockmap.cxx 5902) . The SQL submitted is LOAD TABLE dba.yevmiye_fisi_satir_bilgileri (isyerikodu  PREFIX 2 NULL(ZEROS), yevmiyeno  ASCII(8) NULL(ZEROS), satirno  ASCII(7) NULL(ZEROS), hesapno  PREFIX 2 NULL(ZEROS), aciklama  PREFIX 2 NULL(ZEROS), borc  ASCII(19) NULL(ZEROS), alacak  ASCII(19) NULL(ZEROS), miktar  ASCII(14) NULL(ZEROS), birim  ASCII(4) NULL(ZEROS), depokodu  ASCII(9) NULL(ZEROS), hareketkodu  PREFIX 2 NULL(ZEROS), belgeno  PREFIX 2 NULL(ZEROS), yil  ASCII(6) NULL(ZEROS), borc_miktar  ASCII(15) NULL(ZEROS), alacak_miktar  ASCII(15) NULL(ZEROS), fatura_tarihi  BINARY WITH NULL BYTE, kimlik_vergino  PREFIX 2 NULL(ZEROS), uuid  PREFIX 2 NULL(ZEROS)) USING CLIENT FILE 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236_0.dat' QUOTES OFF ESCAPES OFF FORMAT BINARY STRIP OFF BYTE ORDER LOW WITH CHECKPOINT OFF MESSAGE LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.msg' ROW LOG 'C:/ProgramData/SAP BusinessObjects/Data Services/log/bulkloader/fddeb6be20a9b165ed77eb9b0a389236.row' LOG DELIMITED BY 'x7F'.
+Solution EN: This error indicates that the IQ_SYSTEM_MAIN DBSpace has reached its capacity. Consider extending the DBSpace by adding more files or increasing the size of existing ones. Also review space usage with sp_iqdbspace and archive or purge old data if necessary.
+Solution TR: Bu hata, IQ_SYSTEM_MAIN DBSpace alanının dolduğunu gösterir. Mevcut dosyaların boyutunu artırarak veya yeni dosyalar ekleyerek DBSpace alanını genişletmeyi düşünün. Ayrıca sp_iqdbspace ile alan kullanımını inceleyin ve gerekirse eski verileri arşivleyin veya silin.
+
+###
+
+Job: JB_SMALLTABLES_8593
+Type: e
+Error: Data flow df_1SQL submitted to ODBC data source IQ_SIM_497 resulted in error [SAP][ODBC Driver][SAP IQ]Table 'frsArazi_20180510' notfound. The SQL submitted is TRUNCATE TABLE dba.frsArazi_20180510.
+Solution EN: The error means the table 'frsArazi_20180510' does not exist in the database. Check if the table name is correct or if it was deleted.
+Solution TR: Hata, 'frsArazi_20180510' tablosunun veritabanında bulunmadığını gösterir. Tablo adını kontrol edin veya silinmiş olabileceğini göz önünde bulundurun.
+
+###
+
+Job: Unknown Job
+Type: e
+Error: HTTP client error:28:28:28:Timeout was reached - SAP Data Services 4.x
+Solution EN: In the DSConfig.txt file under the [AL_Engine] section, add HTTPRequestTimeout = 5000 to set the request timeout in milliseconds, and increase the value if a longer timeout is needed.
+Solution TR: DSConfig.txt dosyasında [AL_Engine] bölümünün altına HTTPRequestTimeout = 5000 satırını ekleyin; bu ayar, isteğin zaman aşımı süresini milisaniye cinsinden belirler. Daha uzun bir zaman aşımı gerekiyorsa bu değeri artırın.
+
+
+###
+
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Specified value for Extractor date-time in invalid.(BODI-1116176)
+Solution EN: Only a global datetime variable can be used as a parameter in ODP source extraction; create one with the desired datetime value, select it in the ODP settings, then save and validate without errors.
+Solution TR: ODP kaynak ekstraksiyonunda yalnızca global bir datetime değişkeni parametre olarak kullanılabilir; istenilen datetime değeriyle bir tane oluşturun, ODP ayarlarında bu değişkenişkeni seçin, ardından hatasız şekilde kaydedip doğrulayın.
+
+
+###
+
+Job: JB_BIGTABLES
+Type: e
+Error: Cannot write pipe, due to error In write : write failed : 32 - Broken pipe; m_writeHandle = 18; m_processHandle = 0.
+Solution EN: Try increasing the number of open files by setting the limit to a higher value, for example by running ulimit minus n 819200 as the SAP Data Services user
+Solution TR: Açık dosya sayısını artırmayı deneyin; Örneğin, SAP Data Services kullanıcısı olarak ulimit -n 819200 komutunu çalıştırarak limiti daha yüksek bir değere ayarlayın.
+
+###
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Cannot import the metadata table name=XXX. Table XXX cannot be imported for datastore XXX.Possible causes:(1) Table does not exist in the database; (2) Information for import was specified incorrectly. Check the import information and try again. If the name is case-sensitive in the database(and not all uppercase), enter the name as it appears in the database and use double-quotation marks around the name to preserve the case.(BODI-1112339)
+Solution EN: Install PostgreSQL client13 on Redhat EL8.1
+Solution TR: Redhat EL8.1 üzerine PostgreSQL client 1300ü yükleyin.
+
+###
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Specified value for Extractor date-time in invalid.(BODI-1116176)
+Solution EN: Only a global datetime variable can be used as a parameter in ODP source extraction; create one with the desired datetime value, select it in the ODP settings, then save and validate without errors.
+Solution TR: ODP kaynak ekstraksiyonunda yalnızca global bir datetime değişkeni parametre olarak kullanılabilir; istenilen datetime değeriyle bir tane oluşturun, ODP ayarlarında bu değişkeni seçin, ardından hatasız şekilde kaydedip doğrulayın.
+
+
+###
+
+Job: JB_BIGTABLES
+Type: e
+Error: Data Services is unable to generate the schema information from the following SQL: 'SELECT * FROM xxx' Error reading BigQuery table data from Google API Serverxxx; HTTP Error string:Invalid table name...(BODI-1112172)
+Solution EN: Create Google BigQuery ODBC datastore instead of the Google BigQuery datastore.
+Solution TR: Google BigQuery datastore yerine Google BigQuery ODBC datastore oluşturun.
+
+###
+
+
+Job: JB_DIRECTORIES
+Type: e
+Error: Unable to find servers in CMS_host: port and cluster @CMS_host:port with kind pjs and service DS.AdminService. All such servers could be down or disabled by the administrator. (FWM 01014).
+Solution EN: If an EIM Adaptive Processing Server becomes corrupted or unresponsive, try creating a new test server by stopping, disabling, and then selecting services for a new EIMAdaptiveProcessingServer in the Central Management Console
+Solution TR: Bir EIM Adaptive Processing Server bozulur ya da yanıt vermez hale gelirse, Central Management Console üzerinden yeni bir test sunucusu oluşturmayı deneyin; bunun için mevcut sunucuyu durdurun, devre dışı bırakın ve ardından yeni bir EIMAdaptiveProcessingServer için servisleri seçin.
+
+###
+
+Job: JB_SMALLTABLES
+Type: e
+Error: Cannot write pipe, due to error In write : write failed : 32 - Broken pipe; m_writeHandle = 18; m_processHandle = 0.
+Solution EN: 
+Solution TR: 
